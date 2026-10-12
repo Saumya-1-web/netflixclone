@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix | Watch Movies & Shows</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header class="navbar">
+        <a href="#" class="logo">NETFLIX</a>
+
+        <nav class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#browse" data-category="series">TV Shows</a>
+            <a href="#browse" data-category="movie">Movies</a>
+            <a href="#browse" id="myListBtn">My List</a>
+        </nav>
+
+        <div class="nav-right">
+            <input
+                type="search"
+                id="searchInput"
+                placeholder="Search..."
+                aria-label="Search movies and shows"
+            >
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <p class="hero-label">NETFLIX ORIGINAL</p>
+            <h1>Stranger Things</h1>
+            <p class="hero-description">
+                A missing boy. A mysterious girl. A small town hiding
+                extraordinary secrets. Enter a world where nothing is
+                quite what it seems.
+            </p>
+
+            <div class="hero-buttons">
+                <button class="hero-play" id="heroPlayBtn">▶ Play</button>
+                <button class="hero-info" id="heroInfoBtn">
+                    ⓘ More Information
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Movie Browsing Section -->
+    <main id="browse">
+        <div class="section-heading">
+            <h2 id="sectionTitle">Popular on Netflix</h2>
+
+            <div class="category-buttons">
+                <button class="filter-btn active" data-category="all">All</button>
+                <button class="filter-btn" data-category="movie">Movies</button>
+                <button class="filter-btn" data-category="series">TV Shows</button>
+            </div>
+        </div>
+
+        <div id="movieContainer" class="movie-container"></div>
+    </main>
+
+    <!-- Movie Information Modal -->
+    <div id="movieModal" class="modal" aria-hidden="true">
+        <div class="modal-content movie-modal-content" role="dialog"
+             aria-modal="true" aria-labelledby="modalTitle">
+
+            <button id="closeMovie" class="close-btn"
+                    aria-label="Close movie information">&times;</button>
+
+            <img id="modalPoster" class="modal-poster" src=""
+                 alt="Movie poster">
+
+            <div class="modal-details">
+                <p class="modal-label">NOW STREAMING</p>
+                <h2 id="modalTitle">Movie Title</h2>
+
+                <div class="movie-meta">
+                    <span id="modalYear"></span>
+                    <span id="modalRating"></span>
+                    <span id="modalDuration"></span>
+                </div>
+
+                <p id="modalDescription"></p>
+
+                <button id="modalPlayBtn" class="primary-btn">
+                    ▶ Play Trailer
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Trailer Modal -->
+    <div id="trailerModal" class="modal" aria-hidden="true">
+        <div class="modal-content trailer-modal-content"
+             role="dialog" aria-modal="true"
+             aria-label="Movie trailer">
+
+            <button id="closeTrailer" class="close-btn"
+                    aria-label="Close trailer">&times;</button>
+
+            <iframe
+                id="trailerFrame"
+                src=""
+                title="Movie trailer"
+                allow="autoplay; encrypted-media; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>This is a Netflix-inspired educational project.</p>
+        <p>Made with HTML, CSS and JavaScript.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
